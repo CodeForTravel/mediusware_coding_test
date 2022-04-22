@@ -6,8 +6,9 @@ import * as filters from "../filters.js";
 import store from "./store";
 import router from "./router";
 
-const NavigationSysadmin =()=> import("./components/base/NavigationSysadmin.vue")
-const TopBar =()=> import("./components/base/TopBar.vue")
+const NavigationSysadmin = () =>
+  import("./components/base/NavigationSysadmin.vue");
+const TopBar = () => import("./components/base/TopBar.vue");
 
 import {
   LayoutPlugin,
@@ -28,9 +29,9 @@ import {
   BTable,
   BIcon,
   BSpinner,
-  BFormCheckbox
+  BFormCheckbox,
+  BContainer,
 } from "bootstrap-vue";
-
 
 //bootstrap components
 Vue.component("BCard", BCard);
@@ -50,13 +51,10 @@ Vue.component("BTable", BTable);
 Vue.component("BIcon", BIcon);
 Vue.component("BSpinner", BSpinner);
 Vue.component("BFormCheckbox", BFormCheckbox);
-
-
-
+Vue.component("BContainer", BContainer);
 
 // bootstrap directives
 Vue.directive("b-modal", VBModal);
-
 
 Vue.component("Select2", Select2);
 
@@ -77,6 +75,6 @@ const app = new Vue({
   store,
   components: {
     NavigationSysadmin,
-    TopBar
+    TopBar,
   },
 });

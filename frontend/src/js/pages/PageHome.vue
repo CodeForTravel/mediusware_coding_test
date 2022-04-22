@@ -1,17 +1,16 @@
 <template>
   <div>
-      <h1>
-          Hello Home
-      </h1>
+    <Home />
   </div>
 </template>
 
 <script>
+const Home = () => import("../components/home/Home.vue");
 export default {
-
-}
+  components: {
+    Home,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
