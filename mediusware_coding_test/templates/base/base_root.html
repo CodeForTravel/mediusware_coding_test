@@ -1,0 +1,60 @@
+{% load static %} {% load render_bundle from webpack_loader %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{% static 'vendor/css/fontawesome/css/all.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'vendor/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'scss/sb-admin-2.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
+      rel="stylesheet"
+    />
+
+    {% comment %} Vendor JS {% endcomment %}
+    <script src="{% static 'vendor/js/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/js/popper.min.js' %}"></script>
+    <script src="{% static 'vendor/js/bootstrap.min.js' %}"></script>
+    {% comment %}
+    <script src="{% static 'vendor/js/bootbox.min.js' %}"></script>
+    <script src="{% static 'vendor/js/ekko-lightbox.min.js' %}"></script>
+    {% endcomment %}
+
+    {% comment %} Custom JS {% endcomment %}
+
+    <title>{% block html_title %}{% endblock html_title %}</title>
+  </head>
+  <body id="page-top">
+    {% block particlesjs %}
+    <div id="particles-js"></div>
+    {% endblock particlesjs %}
+
+    <div id="app">{% block root_content %} {% endblock root_content %}</div>
+
+    {% block footer %}
+    <div id="footer" class="fixed-bottom">
+      <!-- Footer -->
+      <footer class="page-footer bg-white border shadow-sm font-small blue">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-2">
+          Copyright © 2021-2022
+          <a href="/">Mediusware</a>. All
+          Rights Reserved
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+    {% endblock footer %}
+
+    {% render_bundle 'app' 'js' %}
+
+
+    <script src="{% static 'vendor/js/sb-admin-2.js' %}"></script>
+  </body>
+</html>

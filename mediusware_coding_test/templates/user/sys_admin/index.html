@@ -1,0 +1,22 @@
+{% extends "base/base_root.html" %}
+
+{% block root_content %}
+<div id="wrapper">
+    <navigation-sysadmin></navigation-sysadmin>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <top-bar></top-bar>
+
+            <div class="container-fluid">
+            {% block content %}
+                <router-view></router-view>
+            {% endblock content %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock root_content %}
+
+{% block footer %}
+{% endblock footer %}
