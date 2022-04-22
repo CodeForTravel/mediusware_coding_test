@@ -7,19 +7,6 @@ from django.shortcuts import redirect
 from django.urls import reverse
 
 
-class HomeView(LoginRequiredMixin, View):
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            if request.user.is_superuser:
-                return redirect("admin:index")
-            elif request.user.is_sysadmin:
-                return redirect("core:dashboard")
-            else:
-                return redirect("core:profile")
-
-        return super().dispatch(request, *args, **kwargs)
-
-
 class IndexView(TemplateView, View):
     template_name = "index.html"
 

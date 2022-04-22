@@ -5,9 +5,7 @@ from mediusware_coding_test.apps.user import views as views_user
 app_name = "core"
 
 urlpatterns = [
-    path("", views_core.HomeView.as_view(), name="home"),
-    path("login", views_user.AuthLoginView.as_view(), name="login"),
-    # visit records export urls
+    path("", views_core.IndexView.as_view(), name="home"),
 ]
 
 

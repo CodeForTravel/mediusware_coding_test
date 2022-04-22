@@ -14,10 +14,21 @@ const PagePasswordResetConfirm = () =>
   import("../pages/registration/PagePasswordResetConfirm.vue");
 const PageSettingsSysadminGeneral = () =>
   import("../pages/settings/sys_admin/PageSettingsSysadminGeneral.vue");
+const PageHome =()=> import("../pages/PageHome.vue")
 
 Vue.use(Router);
 
 const routes = [
+
+  {
+    path: "/",
+    name: "home",
+    component: PageHome,
+    props: true,
+    meta: { title: "Home | Mediusware", navBarTitle: "Home" },
+  },
+
+
   {
     path: "/user/profile/",
     name: "profile",
