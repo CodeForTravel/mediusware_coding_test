@@ -11,7 +11,7 @@
       :to="{ name: 'dashboard' }"
     >
       <div>
-        <img src="/static/img/MediuswareLogo.png" alt="analytic" width="80%" />
+        <img src="/static/img/MediuswareLogo.png" alt="Mediusware" width="80%" />
       </div>
     </b-link>
 
